@@ -9,7 +9,7 @@ public class MyFinanceDbContext : DbContext
     public DbSet<Transacao> Transacao { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
-            var connectionString = @"Server=.\SQLEXPRESS;Database=myfinance;Trusted_Connection=True;TrustServerCertificate=true";
+            var connectionString = @"Server=.\SQLEXPRESS;Database=myfinance;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=False";
             optionsBuilder.UseSqlServer(connectionString);
         }
 }
