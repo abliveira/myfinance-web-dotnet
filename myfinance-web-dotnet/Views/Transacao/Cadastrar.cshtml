@@ -1,22 +1,32 @@
-@model PlanoContaModel
+@model TransacaoModel
 
 @{
-    ViewData["Title"] = "Cadastrar de plano de contas";
+    ViewData["Title"] = "Registro de Transação Financeira";
 }
 
 <h1>@ViewData["Title"]</h1>
 
-<form asp-controller="PlanoConta" asp-action="Cadastrar" method="post">
+<form asp-controller="Transacao" asp-action="Cadastrar" method="post">
     <div class="container">
         <div class="mb-3">
-            <label ckass="form-label">Descrição</label>
+            <label ckass="form-label">Data</label>
             <input type="hidden" id="txtId" class="form-control" asp-for="Id" />
-            <input type="text" id="txtNome" class="form-control" asp-for="Descricao" />
+            <input type="date" id="txtData" class="form-control" asp-for="Data" />
         </div>
 
         <div class="mb-3">
-            <label>@Html.RadioButtonFor(m => m.Tipo, "D") Despesa</label>
-            <label>@Html.RadioButtonFor(m => m.Tipo, "R") Receita</label>
+            <label ckass="form-label">Valor</label>
+            <input type="text" id="txtValor" class="form-control" asp-for="Valor" step="0.01"/>
+        </div>
+
+        <div class="mb-3">
+            <label ckass="form-label">Item Plano Conta</label>
+            @Html.DropDownListFor(m => m.PlanoContaId, Model.ListaPlanoContas, new { @class="form-select" })
+        </div>
+
+        <div class="mb-3">
+            <label ckass="form-label">Historico</label>
+            <input type="text" id="txtNome" class="form-control" asp-for="Historico" />
         </div>
 
         <div class="mb-3">
@@ -32,6 +42,6 @@
 <script>
   function Voltar()
   {
-      window.location.href = "../PlanoConta/Index"
+      window.location.href = "../Index"
   }
 </script>
