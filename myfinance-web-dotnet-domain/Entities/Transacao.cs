@@ -1,8 +1,9 @@
-﻿namespace myfinance_web_dotnet.Domain.Entities;
+﻿using myfinance_web_dotnet_domain.Entities.Base;
 
-public class Transacao
+namespace myfinance_web_dotnet.Domain.Entities;
+
+public class Transacao : EntityBase
 {
-    public int? Id { get; set; }
     public String? Historico { get; set; }
     public DateTime Data { get; set; }
     public decimal Valor { get; set; }
