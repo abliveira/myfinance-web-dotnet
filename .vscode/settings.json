@@ -1,0 +1,5 @@
+{
+    "dotnet.defaultSolution": "myfinance-web-dotnet.sln",
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/76fc7b16-1fdd-4d9d-a811-50b5bc3b515a/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/myfinance-app",
+    "appService.deploySubpath": "publish"
+}
